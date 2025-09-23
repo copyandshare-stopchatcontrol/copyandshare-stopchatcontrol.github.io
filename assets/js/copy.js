@@ -1,18 +1,19 @@
-import * as cleaner from "./lib/cleaner.js";
-import  * as setup from   "./lib/setup.js";
-import * as html2md from  "./lib/html2/html2md.js";
+import * as cleaner  from  "./lib/cleaner.js";
+import * as setup    from  "./lib/setup.js";
+import * as html2md  from  "./lib/html2/html2md.js";
 
 
-function cleaner(node) {
-    deleteIndentation(node);
-    deleteBR(node);
-    deleteBreaksAfterHeadings(node);
-    deleteBreaksAfterParagraphs(node);  
-    trimLinks(node);
-    trimSpan(node);
-    trimParagraphs(node);
-    trimSummary(node);
-    trimHeadings(node);
+
+function cleanerManager(node) {
+    cleaner.deleteIndentation(node);
+    cleaner.deleteBR(node);
+    cleaner.deleteBreaksAfterHeadings(node);
+    cleaner.deleteBreaksAfterParagraphs(node);  
+    cleaner.trimLinks(node);
+    cleaner.trimSpan(node);
+    cleaner.trimParagraphs(node);
+    cleaner.trimSummary(node);
+    cleaner.trimHeadings(node);
 
 }
 
@@ -21,7 +22,7 @@ function cleaner(node) {
 function htmlToMarkdown(root) {
     const node = root.cloneNode(true);
 
-    transformPmsgtxtToMarkdown(node);
+    html2md.transformPmsgtxtToMarkdown(node);
     // transformBRtoBreak(node);
     // transformLinks(node);              // règle générale pour <a>
     // transformSummaryAnchors(node);     // garde le texte dans <summary>
@@ -34,10 +35,11 @@ function htmlToMarkdown(root) {
 
 function main() {
     
-    document.addEventListener('DOMContentLoaded', cleaner.setupCopy);
-    safeCopy(); 
-    cleaner(node);
+    document.addEventListener('DOMContentLoaded', setup.setupCopy);
+
+    setup.safeCopy();
     htmlToMarkdown(node);
+    cleanerManager(node);
 }
 
 main();

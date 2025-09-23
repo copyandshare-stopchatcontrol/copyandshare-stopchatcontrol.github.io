@@ -33,6 +33,7 @@ function trimHeadings(node) {
 }
 
 
+
 /*
 REGEX DELETION FOR :
 indentation,
@@ -68,8 +69,10 @@ function deleteBR(node) {
 
 
 
-
-
+export {
+  deleteIndentation,  deleteBreaksAfterHeadings, deleteBreaksAfterParagraphs, deleteBR,
+  trimLinks, trimSpan, trimParagraphs, trimSummary, trimHeadings
+} ;
 
 
 // function normalizeLineBreaksAndSpaces(node) {

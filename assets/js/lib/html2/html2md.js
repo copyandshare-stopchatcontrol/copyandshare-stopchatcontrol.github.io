@@ -4,7 +4,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
 // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
 
-
+/*
 function transformBaliseToMarkdownLevel2(node, element1, element2, transformFunc) {
     node.querySelectorAll(element1).forEach(el => {
         const text =  
@@ -12,6 +12,7 @@ function transformBaliseToMarkdownLevel2(node, element1, element2, transformFunc
         el.replaceWith(transformFunc(text));
   });
 }
+*/
 
 function transformBaliseToMarkdownLevel1(node, element1, transformFunc) {
     node.querySelectorAll(element1).forEach(el => {
@@ -19,6 +20,10 @@ function transformBaliseToMarkdownLevel1(node, element1, transformFunc) {
         el.replaceWith(transformFunc(el.textContent));
   });
 }
+
+
+
+
 
 // --- Étapes de transformation ---
 
@@ -34,9 +39,6 @@ function transformPmsgtxtToMarkdown(node) {
 // p.textContent.trim() + '\n\n'
 
 
-
-
-
 function transformStrongToMarkdown(node) {
     transformBaliseToMarkdownLevel1(node, 'p .important .txt-part', text => `**${text}**`);
 
@@ -46,6 +48,11 @@ function transformStrongToMarkdown(node) {
 //             s.replaceWith(`**${text}**`);
 //   });
 }
+
+
+
+
+
 
 function transformParagraphsToMarkdown(node) {
     transformBaliseToMarkdownLevel1(node, 'p', text => text + '\n\n');
@@ -92,3 +99,5 @@ function transformHeadings(node) {
 
 
 }
+
+export { transformPmsgtxtToMarkdown, transformBRtoBreak, transformLinks, transformSummaryAnchors, transformParagraphsToMarkdown, transformStrongToMarkdown, transformHeadings } ;

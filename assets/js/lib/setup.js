@@ -36,4 +36,5 @@ async function safeCopy(text) {
 }
 
 
-// export { setupCopy, safeCopy } ;
+
+export { setupCopy, safeCopy } ;
