@@ -10,6 +10,9 @@ import * as html2md  from  "./lib/html2/html2md.js";
 function htmlToMarkdown(root) {
     const node = root.cloneNode(true);
     cleaner.Manager(node);
+
+    return node.textContent
+
     // html2md.transformPmsgtxtToMarkdown(node);
     // transformBRtoBreak(node);
     // transformLinks(node);              // règle générale pour <a>

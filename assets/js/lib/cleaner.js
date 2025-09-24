@@ -4,15 +4,16 @@ TRIM
 
 
 function Manager(node) {
-    deleteIndentation(node);
-    deleteBR(node);
-    deleteBreaksAfterHeadings(node);
-    deleteBreaksAfterParagraphs(node);  
     trimLinks(node);
     trimSpan(node);
     trimParagraphs(node);
     trimSummary(node);
     trimHeadings(node);
+
+    // deleteIndentation(node);
+    // deleteBR(node);
+    // deleteBreaksAfterHeadings(node);
+    // deleteBreaksAfterParagraphs(node);  
 
 }
 
