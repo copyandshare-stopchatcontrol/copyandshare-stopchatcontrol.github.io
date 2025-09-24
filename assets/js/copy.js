@@ -4,25 +4,13 @@ import * as html2md  from  "./lib/html2/html2md.js";
 
 
 
-function cleanerManager(node) {
-    cleaner.deleteIndentation(node);
-    cleaner.deleteBR(node);
-    cleaner.deleteBreaksAfterHeadings(node);
-    cleaner.deleteBreaksAfterParagraphs(node);  
-    cleaner.trimLinks(node);
-    cleaner.trimSpan(node);
-    cleaner.trimParagraphs(node);
-    cleaner.trimSummary(node);
-    cleaner.trimHeadings(node);
-
-}
 
 
 // Conversion HTML -> Markdown (orchestrateur)
 function htmlToMarkdown(root) {
     const node = root.cloneNode(true);
-
-    html2md.transformPmsgtxtToMarkdown(node);
+    cleaner.Manager(node);
+    // html2md.transformPmsgtxtToMarkdown(node);
     // transformBRtoBreak(node);
     // transformLinks(node);              // règle générale pour <a>
     // transformSummaryAnchors(node);     // garde le texte dans <summary>
@@ -33,13 +21,19 @@ function htmlToMarkdown(root) {
 
 
 
-function main() {
-    
-    document.addEventListener('DOMContentLoaded', setup.setupCopy);
 
-    setup.safeCopy();
-    htmlToMarkdown(node);
-    cleanerManager(node);
+
+function main() {
+    document.addEventListener('DOMContentLoaded', setup.getCopyElements);
+    let elements  = setup.getCopyElements() ; 
+    setup.attachCopyHandler(elements, htmlToMarkdown);
+
+
+
+
+
+
+
 }
 
 main();

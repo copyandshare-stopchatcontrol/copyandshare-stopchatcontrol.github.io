@@ -7,3 +7,41 @@ je récupère le code du navbar de https://stopchatcontrol.fr/
 
 https://hitscounter.dev/
 https://codepen.io/robin-dela/pen/jVddbq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// c'est quoi v ?
+pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
+
+
+/* Pipe conditionnelle (arrête la chaîne si une étape renvoie null/undefined) */
+pipeConditional = (...fns) => (x) => fns.reduce((v, f) => v ? f(v) : v, x);
+
+// c'est quoi fns : un tableau de fonctions 
+pipeConditionalReverse = (...fns) => (x) => fns.reduceRight((v, f) => v ? f(v) : v, x);
+
+// Pipe qui vérifie le retour de la fonction précédente et stop seulement si on as donné la valeur "yes" au lieu de d'une fonction 
+// car pour des raisons de performance on ne vérifie pas tout
+
+
+// Pipe
+// reduce : accumulator currentValue index array 
+const pipe =
+    (...functions) =>
+    (output) => 
+    functions.reduce((acc, fn) => fn(acc), output);

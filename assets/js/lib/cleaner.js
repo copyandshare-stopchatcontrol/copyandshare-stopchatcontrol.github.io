@@ -3,6 +3,20 @@ TRIM
 */
 
 
+function Manager(node) {
+    deleteIndentation(node);
+    deleteBR(node);
+    deleteBreaksAfterHeadings(node);
+    deleteBreaksAfterParagraphs(node);  
+    trimLinks(node);
+    trimSpan(node);
+    trimParagraphs(node);
+    trimSummary(node);
+    trimHeadings(node);
+
+}
+
+
 function trimer(node , ElementType){
         node.querySelectorAll(ElementType).forEach(element => {
         element.textContent = element.textContent.trim();
@@ -69,10 +83,7 @@ function deleteBR(node) {
 
 
 
-export {
-  deleteIndentation,  deleteBreaksAfterHeadings, deleteBreaksAfterParagraphs, deleteBR,
-  trimLinks, trimSpan, trimParagraphs, trimSummary, trimHeadings
-} ;
+export {Manager} ;
 
 
 // function normalizeLineBreaksAndSpaces(node) {

@@ -1,24 +1,45 @@
 // Point d’entrée
-function setupCopy() {
-  const btn = document.getElementById('copy-button');
-  const ok = document.getElementById('copy-success');
+
+
+function getCopyElements() {
+  const button = document.getElementById('copy-button');
+  const success = document.getElementById('copy-success');
   const content = document.getElementById('message-content');
 
-  if (!btn || !content) return;
+  if (!button || !content) {  
+    console.warn('Copy elements not found.');
+    return null;
+  }
 
-  btn.addEventListener('click', async () => {
+  return { button, success, content };
+
+
+}
+
+
+
+
+function attachCopyHandler({ button, success, content } , htmlToMarkdown) {
+
+    button.addEventListener('click', async () => {
     const markdown = htmlToMarkdown(content);
+
+
     try {
       await safeCopy(markdown);
-      if (ok) {
-        ok.classList.add('show');
-        setTimeout(() => ok.classList.remove('show'), 2000);
+      if (success) {
+        success.classList.add('show');
+        setTimeout(() => success.classList.remove('show'), 2000);
       }
-    } catch (e) {
+    }
+    
+    
+    catch (e) {
       alert('Erreur lors de la copie.');
       console.error(e);
     }
   });
+
 }
 
 
@@ -37,4 +58,4 @@ async function safeCopy(text) {
 
 
 
-export { setupCopy, safeCopy } ;
+export { getCopyElements, attachCopyHandler, safeCopy } ;
