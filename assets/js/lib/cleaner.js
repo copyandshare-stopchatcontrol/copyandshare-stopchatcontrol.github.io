@@ -4,16 +4,18 @@ TRIM
 
 
 function Manager(node) {
-    trimLinks(node);
-    trimSpan(node);
-    trimParagraphs(node);
-    trimSummary(node);
-    trimHeadings(node);
+    // trimLinks(node);
 
-    // deleteIndentation(node);
+    // trimSpan(node);
+    // trimParagraphs(node);
+    // trimSummary(node);
+    // trimHeadings(node);
+
+    deleteIndentation(node);
     // deleteBR(node);
     // deleteBreaksAfterHeadings(node);
     // deleteBreaksAfterParagraphs(node);  
+    
 
 }
 
@@ -75,7 +77,7 @@ function deleteBreaksAfterHeadings(node) {
 }
 
 function deleteBreaksAfterParagraphs(node) {
-  return deleter(node, /<p\s*\/?>\s*/gi, '</p>\n\n') 
+  return deleter(node, /<\/p\s*\/?>\s*/gi, '</p>\n\n') 
 }
 
 function deleteBR(node) {

@@ -5,7 +5,6 @@ import * as html2md  from  "./lib/html2/html2md.js";
 
 
 
-
 // Conversion HTML -> Markdown (orchestrateur)
 function htmlToMarkdown(root) {
     const node = root.cloneNode(true);
@@ -26,10 +25,17 @@ function htmlToMarkdown(root) {
 
 
 
+
 function main() {
-    document.addEventListener('DOMContentLoaded', setup.getCopyElements);
-    let elements  = setup.getCopyElements() ; 
-    setup.attachCopyHandler(elements, htmlToMarkdown);
+
+    document.addEventListener('DOMContentLoaded', () =>{
+        let elements  = setup.getCopyElements() ; 
+        
+        setup.attachCopyHandler(elements, htmlToMarkdown);
+
+
+    });
+
 
 
 
