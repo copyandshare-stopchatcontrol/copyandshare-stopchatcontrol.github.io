@@ -1,3 +1,21 @@
+solutions à tester
+    mettre une balise lors du trim
+    mettre une balise lors du delete
+    unifier cleaner et html2md
+mieux gérer mon workflow
+    gestion de release/version tags
+
+*supprimer cleaner.js
+
+forme numéros de version
+
+phases pre-a alpha beta pre-release RTM GA Production
+pre-a : avant les test
+alpha : periode de test
+beta : periode de test mise en prod
+
+
+
 site statique
 js html css
 pour répertorier les version sous chaque langue du message
@@ -7,6 +25,9 @@ je récupère le code du navbar de https://stopchatcontrol.fr/
 
 https://hitscounter.dev/
 https://codepen.io/robin-dela/pen/jVddbq
+
+
+
 
 
 

@@ -1,4 +1,3 @@
-import * as cleaner  from  "./lib/cleaner.js";
 import * as setup    from  "./lib/setup.js";
 import * as html2md  from  "./lib/html2/html2md.js";
 
@@ -8,7 +7,6 @@ import * as html2md  from  "./lib/html2/html2md.js";
 // Conversion HTML -> Markdown (orchestrateur)
 function htmlToMarkdown(root) {
     const node = root.cloneNode(true);
-    cleaner.Manager(node);
 
     return node.textContent
 
@@ -20,9 +18,6 @@ function htmlToMarkdown(root) {
     // transformStrongToMarkdown(node); // <p><strong>...</strong></p>
     // transformHeadings(node);           // h2 -> ## titre
 }
-
-
-
 
 
 
