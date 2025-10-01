@@ -14,16 +14,46 @@ function transformBaliseToMarkdownLevel2(node, element1, element2, transformFunc
 }
 */
 
-function transformBaliseToMarkdownLevel1(node, element1, transformFunc) {
-    node.querySelectorAll(element1).forEach(el => {
 
-        el.replaceWith(transformFunc(el.textContent));
-  });
+import {finalizeText} from './cleaner.js';
+
+function manager(node) {
+    retrieveHashtag(node);
+    transformBRtoBreak(node);
+    transformLinks(node);              // règle générale pour <a>
+    transformSummaryAnchors(node);     // garde le texte dans <summary>
+    transformParagraphsToMarkdown(node); // <p>...</p>
+    transformStrongToMarkdown(node); // <p><strong>...</strong></p>
+    transformHeadings(node);           // h2 -> ## titre
+
+    return finalizeText(node);
 }
 
 
 
 
+function transformBaliseToMarkdownLevel1(node, element1, transformFunc) {
+    node.querySelectorAll(element1).forEach(el => {
+        
+        el.replaceWith(transformFunc(el.textContent).trim());
+    });
+}
+
+
+
+function retrieveHashtag(node) {
+    const hashtagDiv = document.getElementById('hashtag_invisible');
+    if (hashtagDiv) {
+        const hashtagText = hashtagDiv.textContent || '';
+        const hashtagNode = document.createElement('div');
+        hashtagNode.textContent = `${hashtagText}`;
+        node.appendChild(hashtagNode);
+    }
+}
+
+// function retrieveHashtag(node) {
+//     transformBaliseToMarkdownLevel1(node, '#hashtag_invisible', text => text);
+// }
 
 // --- Étapes de transformation ---
 
@@ -100,4 +130,5 @@ function transformHeadings(node) {
 
 }
 
-export { transformPmsgtxtToMarkdown, transformBRtoBreak, transformLinks, transformSummaryAnchors, transformParagraphsToMarkdown, transformStrongToMarkdown, transformHeadings } ;
+
+export {manager};

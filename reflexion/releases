@@ -1,0 +1,8 @@
+I use the standard "scalver" for my semantic versioning
+
+command for retrieve the hash
+git rev-parse --short HEAD
+
+
+# v0.202510.0-alpha.1+monthly
+first alpha

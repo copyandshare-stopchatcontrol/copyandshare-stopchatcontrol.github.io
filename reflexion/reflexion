@@ -3,9 +3,10 @@ solutions à tester
     mettre une balise lors du delete
     unifier cleaner et html2md
 mieux gérer mon workflow
-    gestion de release/version tags
+    *gestion de release/version tags
 
-*supprimer cleaner.js
+
+*supprimer cleaner.js  Sun Sep 28 11:50:03 PM -03 2025
 
 forme numéros de version
 
@@ -25,7 +26,6 @@ je récupère le code du navbar de https://stopchatcontrol.fr/
 
 https://hitscounter.dev/
 https://codepen.io/robin-dela/pen/jVddbq
-
 
 
 

@@ -1,5 +1,6 @@
 /* StopChatControl - Main CSS File */
 
+
 /* AXIOMES */
 @import "lib/variables.css";
 @import "lib/a.css";
@@ -8,8 +9,8 @@
 /* ZONES */
 @import "lib/header.css";
 @import "lib/footer.css";
-@import "lib/message-card.css";
 @import "lib/html-body.css";
+@import "lib/message-card.css";
 @import "lib/language-nav.css";
 
 
@@ -18,4 +19,5 @@
   .message-content {padding:1rem 1.5rem 1.5rem ;}
   a{text-decoration: none}
 }
+
 
