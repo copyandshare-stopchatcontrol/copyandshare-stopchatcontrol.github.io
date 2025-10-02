@@ -1,12 +1,28 @@
-solutions à tester
+* solutions à tester
     mettre une balise lors du trim
     mettre une balise lors du delete
-    unifier cleaner et html2md
+    * unifier cleaner et html2md
 mieux gérer mon workflow
-    *gestion de release/version tags
+    * gestion de release/version tags
+
+* corriger la nav
+
+* supprimer cleaner.js  Sun Sep 28 11:50:03 PM -03 2025
+
+#here
+corriger imcompatibilité 
+
+* un titre pour about
+texte des <pre> plus gros
+shadow-box pour le tableau
 
 
-*supprimer cleaner.js  Sun Sep 28 11:50:03 PM -03 2025
+
+
+
+
+
+
 
 forme numéros de version
 

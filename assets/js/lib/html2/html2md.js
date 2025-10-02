@@ -18,6 +18,7 @@ function transformBaliseToMarkdownLevel2(node, element1, element2, transformFunc
 import {finalizeText} from './cleaner.js';
 
 function manager(node) {
+    transformPmsgtxtToMarkdown(node); // <div class="message-txt"><p>...</p></div>
     retrieveHashtag(node);
     transformBRtoBreak(node);
     transformLinks(node);              // règle générale pour <a>
@@ -39,16 +40,30 @@ function transformBaliseToMarkdownLevel1(node, element1, transformFunc) {
     });
 }
 
+function transformBaliseToMarkdownLevel_notrim(node, element1, transformFunc) {
+    node.querySelectorAll(element1).forEach(el => {
+        
+        el.replaceWith(transformFunc(el.textContent));
+    });
+}
+
+
+
+
+// function retrieveHashtag(node) {
+//     const hashtagDiv = document.getElementById('hashtag_invisible');
+//     if (hashtagDiv) {
+//         const hashtagText = hashtagDiv.textContent || '';
+//         const hashtagNode = document.createElement('div');
+//         hashtagNode.textContent = `${hashtagText}`;
+//         node.appendChild(hashtagNode);
+//     }
+// }
+
 
 
 function retrieveHashtag(node) {
-    const hashtagDiv = document.getElementById('hashtag_invisible');
-    if (hashtagDiv) {
-        const hashtagText = hashtagDiv.textContent || '';
-        const hashtagNode = document.createElement('div');
-        hashtagNode.textContent = `${hashtagText}`;
-        node.appendChild(hashtagNode);
-    }
+    transformBaliseToMarkdownLevel_notrim(node, '#hashtags', text => `${text} \n`);
 }
 
 // function retrieveHashtag(node) {

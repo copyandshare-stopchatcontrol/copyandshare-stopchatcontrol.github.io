@@ -1,6 +1,6 @@
-:root{
+  :root{
   --primary:#5ea3fe;          /* liens non consultés */
-  --visited:#ffd500;          /* liens consultés */
+  --visited:#ffea00;          /* liens consultés */
   --bg:#0B084A;               /* fond body */
   --header:#050325;           /* fond header/footer */
   --md-text:#e9e9fb;          /* texte markdown */
