@@ -6,3 +6,15 @@ git rev-parse --short HEAD
 
 # v0.202510.0-alpha.1+monthly.sha.e9d0f91
 first alpha
+
+# v0.202510.1-alpha.1+patch.sha.8dc75ff (2025/10/02)
+[patch]
+* completed text for about
+* rewrited translations
+* turn share button in comment
+* turn copy button in comment for about
+
+* added README.md
+* added LICENCE.md
+
+
