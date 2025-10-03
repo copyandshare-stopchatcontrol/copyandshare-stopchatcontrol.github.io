@@ -98,11 +98,10 @@ npx serve .
 - [ ] Headings remain logical (no skipped levels)
 
 ## Roadmap Ideas
-- Add Dutch, Swedish, Romanian versions
-- Add lightweight dark mode toggle (prefers-color-scheme based)
 - Generate `sitemap.xml` automatically via a small script
 - Provide a compressed share-ready plain text file
 - Add optional integrity hash for JS/CSS (subresource integrity)
+- Add visitors badge when the website will be ready(when frenchs Links Youtube will be adapted for others languages)
 
 ## Privacy / Analytics
 No invasive tracking. Only a simple hit counter badge (can be removed if desired). No cookies, no fingerprinting.
