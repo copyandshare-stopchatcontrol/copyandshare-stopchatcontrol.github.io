@@ -127,7 +127,7 @@ function transformLinks(node) {
         }
 
         else {
-            a.replaceWith(href);
+            a.replaceWith(`- ${href}`);
         }
 });
 
