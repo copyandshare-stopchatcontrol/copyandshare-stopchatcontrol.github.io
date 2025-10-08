@@ -5,6 +5,7 @@ function finalizeText(node) {
     // .replace(/\u00A0/g, '')    // espaces insécables
     .replace(/^[ \t]+/gm, '')           // indentation
     .replace(/^(#+.*)$\n+/gm, '$1\n') // lignes vides après titres
+    .replace(/ /gm, ' ')
     .trim()
   return text;
 }

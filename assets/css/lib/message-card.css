@@ -14,12 +14,19 @@ box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px
   overflow: hidden
 }.message-header{padding:1rem 1rem 0}
 #hashtags{font-weight:700;color:var(--white);}
-.message-content{padding:1rem 1.25rem 1.25rem}
+.message-content{
+  padding:1rem 1.25rem 1.25rem;
+  overflow:auto;
+}
 /* .message-content p{margin:.3rem 0} */
 .message-content .message-txt p{margin: 1rem 0}
 .message-content h2{margin:1rem 0 .25rem;font-size:1.1rem}
 .message-header h1{color:var(--white);margin:1rem 0 3rem}
-.message-content a{font-weight:700}
+.message-content a{
+  font-weight:700;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  }
 
 
 pre { 
