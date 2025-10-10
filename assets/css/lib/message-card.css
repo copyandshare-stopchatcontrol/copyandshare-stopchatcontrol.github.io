@@ -24,6 +24,7 @@ box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px
 .message-header h1{color:var(--white);margin:1rem 0 3rem}
 .message-content a{
   font-weight:700;
+  
   white-space: nowrap;
   /* text-overflow: ellipsis; */
   }
